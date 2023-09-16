@@ -1,29 +1,43 @@
-# AutomateEBDeployment
-# Deployment 1.1
+# Automate Elastic Beanstalk Deployment
 
 ## Purpose
 * This repository aims to automate the URL Shortener Application's build, test, and elastic Beanstalk Deployment stages.
 
 ## Steps
-### Step 1
-* Provided the Github URL in the Jenkins pipeline setup and built the Pipeline.
-  <img width="715" alt="Screen Shot 2023-09-16 at 2 20 08 AM" src="https://github.com/DarrielleEvans/AutomateEBDeployment/assets/89504317/215c7425-28a9-4775-84e9-25f7c6a287fb">
-* The stage and test were successful.
 
-## Step 2
-* Setup the appropriate Roles in IAM on AWS to deploy the application in Elastic Beanstalk.
-<img width="1287" alt="Deployment 1 1 Degraded" src="https://github.com/DarrielleEvans/AWS-Deployment-1.1/assets/89504317/af2b6f46-8c98-4f78-a87f-b3e81c925dbd">
-* The deloyment received a degraded health check.
-* In order to assess the errors, I downloaded the last 100 logs.
-* After placing the error in Chatgpt, I realized the app.py file was named incorrectly and throwing an error.
+### First Steps
+* Upload code and Jenkins instructions file to a newly created repository
+* Launch an EC2 instance with the correct security groups
+* Install dependencies and Jenkins on the server
+* Access Jenkins on port 8080
+  
+
+### Next Steps
+* Connect your Github to Jenkins
+* Add a deployment stage to Jenkins file on Github
+* Run the build and test stage
+* Pipeline ran successfully
+<img width="819" alt="Screen Shot 2023-09-16 at 2 24 33 AM" src="https://github.com/DarrielleEvans/AutomateEBDeployment/assets/89504317/aa67058e-8074-42ab-9cd1-99de951ab897">
+
+## Next Steps
+* I Set IAM Roles
+* Install EB CLI on EC2 Instance
+* Run Pipeline in Jenkins
+* This pipeline has an additional stage, which results in a build, test, and Deployment stage
+  <img width="819" alt="Screen Shot 2023-09-16 at 2 24 33 AM" src="https://github.com/DarrielleEvans/AutomateEBDeployment/assets/89504317/3ee2988f-3c48-48f0-9abf-8e64cbf45770">
+
+## Final Steps
+* Create a webhook in Github to send information in the form of JSON every time code is pushed to the repository
+
+## System Design
+![Deployment3 drawio](https://github.com/DarrielleEvans/AutomateEBDeployment/assets/89504317/d1cbb979-3e7d-4aaf-943b-878fe7ee661e)
+
+## Issues
+* 2nd Build failed after adding the deployment stage to the Jenkins file. I incorrectly structured the code but was able to easily fix it.
 
 
-## Step 3
-* I navigated to Github and changed the app.py file to application.py.
-* I uploaded the new zip file to AWS Beanstalk.
-* I received an ok health check.
-<img width="1322" alt="Deployment 1 1 Success" src="https://github.com/DarrielleEvans/AWS-Deployment-1.1/assets/89504317/323aed7e-8625-4a2a-a62e-8b0df6516b3a">
-<img width="1323" alt="Screenshot 2023-08-17 at 4 28 39 PM" src="https://github.com/DarrielleEvans/AWS-Deployment-1.1/assets/89504317/9dc39822-ff71-44ad-9b1a-17989b0991b8">
+
+
 
 ## Technologies Used
 * AWS Beanstalk
